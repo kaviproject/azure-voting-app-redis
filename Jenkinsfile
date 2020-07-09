@@ -9,7 +9,8 @@ pipeline {
       }
       stage('Docker Build') {
          steps {
-            powershell('docker images -a')
+                  bat 'docker build -t docker-reg.cmog.org/simple-flask-app:latest .'  
+            bat 'docker images -a'
            /* powershell(script: """
                cd azure-vote/
                docker images -a
