@@ -9,15 +9,15 @@ pipeline {
       }
       stage('Docker Build') {
          steps {
-                //  bat 'docker build -t docker-reg.cmog.org/simple-flask-app:latest .'  
+          //  powershell('docker build -t docker-reg.cmog.org/simple-flask-app:latest .')  
             powershell('docker images -a')
-           /* powershell(script: """
+             powershell(script: """
                cd azure-vote/
                docker images -a
                docker build -t jenkins-pipeline .
                docker images -a
                cd ..
-            """)*/
+            """)
          }
       }   
    }
